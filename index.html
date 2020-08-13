@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enceder un foco</title>
+  <!-- Estilos -->
+  <style>
+    body{
+      background-color: #cea21b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .focoIzq {
+      height: auto;
+      width: auto;
+      margin-top:  50px;
+    }
+    .focoMed {
+      height: auto;
+      width: auto;
+      margin-top:  50px;
+    }
+    .focoDer {
+      height: auto;
+      width: auto;
+      padding-right: 50px;
+      margin-top:  50px;
+    }
+    .light {
+      box-shadow:0px 0px 40px 10px rgba(255, 255, 255, 0.9);
+    }
+    .boton{
+      width: 100px;
+      height: 100px;
+      font-family: Helvetica, sans-serif;
+      background-color: white;
+      opacity: .8;
+      color: black;
+      border-radius: 40%;
+      border: 2px solid black;
+      cursor: pointer;
+      outline: none;
+      margin-top:  50px;
+    }
+    .botonUp{
+      background-color: black;
+      color: white;
+      border: 2px solid white;
+    }
+
+  </style>
+</head>
+<body>
+  <img class="focoIzq" src="izquierdo.png" alt="foco">
+  <img class="focoMed" id="color" src="medio.png" alt="foco">
+  <img class="focoDer" src="derecho.png" alt="foco">
+  <input class="boton" type="button" onclick="encender_foco()" value="Encender" id="button">
+
+
+  <!-- JavaScript -->
+  <script>
+    function encender_foco(){
+      var color = document.getElementById("color")
+      var button = document.getElementById("button")
+      color.classList.toggle("light")
+      button.classList.toggle("botonUp")
+      button.value = "Apagar";
+    }
+
+  </script>
+</body>
+</html>
