@@ -56,18 +56,34 @@
   <img class="focoIzq" src="izquierdo.png" alt="foco">
   <img class="focoMed" id="color" src="medio.png" alt="foco">
   <img class="focoDer" src="derecho.png" alt="foco">
-  <input class="boton" type="button" onclick="encender_foco()" value="Encender" id="button">
+  <input class="boton" type="button" value="Encender" id="button">
 
 
   <!-- JavaScript -->
   <script>
-    function encender_foco(){
+
       var color = document.getElementById("color")
       var button = document.getElementById("button")
-      color.classList.toggle("light")
-      button.classList.toggle("botonUp")
-      button.value = "Apagar";
+      var contador = 0
+
+    function encender_foco(){
+      if (contador === 0){
+      color.classList.add("light")
+      button.classList.add("botonUp")
+      button.value = ("Apagar")
+      contador = 1
+      console.log(contador)
+      }
+      else {
+        color.classList.remove("light")
+        button.classList.remove("botonUp")
+        button.value = ("Encender")
+        contador = 0
+        console.log(contador)
+      }
     }
+
+    button.addEventListener('click', encender_foco);
 
   </script>
 </body>
